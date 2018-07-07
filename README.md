@@ -71,4 +71,20 @@ export class EqualToValidatorDirective implements Validator, OnChanges {
     return this.valFn(control);
   }
 }
+
 ```
+# Add directive on main module
+```
+
+import { NgModule } from '@angular/core';
+import { EqualToValidatorDirective } from './validation.directive'; 
+
+@NgModule({
+  declarations: [
+    EqualToValidatorDirective
+  ],
+  imports: [
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

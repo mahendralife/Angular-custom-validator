@@ -54,8 +54,7 @@ export class EqualToValidatorDirective implements Validator, OnChanges {
   // Input store last value for equalTo
   @Input() equalTo: string;
   private valFn = Validators.nullValidator;
-  // define null Validators [REF](https://angular.io/api/forms/Validators#nullValidator)
-
+  // define null Validators REF:(ttps://angular.io/api/forms/Validators#nullValidator
   ngOnChanges(changes: SimpleChanges): void {
     const change = changes['equalTo'];
     if (change) {

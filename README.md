@@ -1,13 +1,12 @@
 # Angular 6 Custom validator ( Confirm Password ) 
 How to implement custom confirm password validator in Angular 6 (Final) (template driven form)
-/**
+
  * This directive will be allow to validate two controls value  with same unique Attribute
  * [equalTo]
  * this directive return AbstractControl with new custom validation {equalTo : _value}
  * and return NULL if match value
- *
  * HTML TEMPLATE:
- * <form #form="ngForm">
+ ```<form #form="ngForm">
     <label for ="password">Enter your password</label>
     <input
         required
@@ -31,7 +30,8 @@ How to implement custom confirm password validator in Angular 6 (Final) (templat
      {{confirmPassword.errors | json}} 
      OUTPUT: { "equalTo": "pas" }
 </form>
- */
+
+
 import { Directive, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { AbstractControl, NG_VALIDATORS, Validator, ValidatorFn, Validators } from '@angular/forms';
 
@@ -72,3 +72,4 @@ export class EqualToValidatorDirective implements Validator, OnChanges {
     return this.valFn(control);
   }
 }
+```
